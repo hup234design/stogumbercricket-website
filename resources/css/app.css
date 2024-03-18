@@ -1,0 +1,72 @@
+@tailwind base;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    blockquote {
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 34px;
+        margin-right: 34px;
+        border-left-width: thick;
+        padding-left: 5px;
+    }
+}
+
+@tailwind components;
+
+@layer components {
+
+    .container {
+        @apply max-w-7xl mx-auto px-8 lg:px-6;
+    }
+
+    .container .container {
+        @apply px-0 !important;
+    }
+
+
+    .desktop-only {
+        @apply hidden md:block;
+    }
+    .mobile-only {
+        @apply md:hidden;
+    }
+
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .content-blocks .content-block-dark .prose {
+        @apply prose-invert;
+    }
+    .content-blocks .content-block-dark .prose p {
+        @apply font-medium;
+    }
+    .content-blocks .content-block-dark .prose .lead  {
+        @apply text-gray-100;
+    }
+}
+
+@tailwind utilities;
+
+.btn  {
+    @apply bg-red-900 px-8 py-2 text-white no-underline rounded-lg;
+}
+
+/* swiper styles */
+.swiper-button-next:after {
+    @apply text-white;
+}
+.swiper-button-prev:after {
+    @apply text-white;
+}
+.swiper-pagination-bullet {
+    @apply opacity-100 !important;
+}
+.swiper-pagination-bullet-active {
+    @apply bg-white !important;
+}
