@@ -25,19 +25,10 @@ Route::prefix(cms('posts_slug') ?? 'posts')->group(function () {
     Route::get('/', [PostController::class, 'index'])->name('posts');
 });
 
-if( cms('events_enabled') ) {
-    Route::prefix(cms('events_slug') ?? 'events')->group(function () {
-        Route::get('/{slug}', [EventController::class, 'event'])->name('event');
-        Route::get('/', [EventController::class, 'index'])->name('events');
-    });
-}
-
-if( cms('projects_enabled') ) {
-    Route::prefix(cms('projects_slug') ?? 'projects')->group(function () {
-        Route::get('/{slug}', [ProjectController::class, 'project'])->name('project');
-        Route::get('/', [ProjectController::class, 'index'])->name('projects');
-    });
-}
+Route::prefix(cms('events_slug') ?? 'events')->group(function () {
+    Route::get('/{slug}', [EventController::class, 'event'])->name('event');
+    Route::get('/', [EventController::class, 'index'])->name('events');
+});
 
 Route::get('/{slug}', [PageController::class, 'page'])->name('page');
 Route::get('/', [PageController::class, 'home'])->name('home');
