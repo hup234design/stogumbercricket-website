@@ -9,7 +9,7 @@
 </head>
 <body class="antialiased font-sans">
 <main>
-    <x-resourcescontent-blocks :content_blocks="$content_blocks" />
+    <x-content-blocks :content_blocks="$content_blocks" />
 </main>
 @livewireScripts
 </body>
