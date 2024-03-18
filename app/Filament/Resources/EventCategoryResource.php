@@ -21,11 +21,6 @@ class EventCategoryResource extends Resource
     protected static ?int $navigationSort = 2;
     protected static ?string $navigationIcon = 'heroicon-o-puzzle-piece';
 
-    public static function shouldRegisterNavigation(): bool
-    {
-        return cms('events_enabled');
-    }
-
     public static function form(Form $form): Form
     {
         return $form
