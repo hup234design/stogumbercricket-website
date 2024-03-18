@@ -29,9 +29,9 @@ class MediaImage extends Model implements HasMedia
             ->nonQueued();
     }
 
-//    public function getMediaAttribute()
+//    public function getMediaThumbnailAttribute()
 //    {
-//        return $this->getMedia('media_images')[0] ?? null;
+//        return $this->getFirstMedia("media_images")?->getPath('thumbnail');
 //    }
 
     public function getPageUsage() {

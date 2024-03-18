@@ -135,8 +135,9 @@ class MediaImageResource extends Resource
         return $table
             ->columns([
                         Tables\Columns\Layout\Stack::make([
-                            Tables\Columns\SpatieMediaLibraryImageColumn::make('media_image')
+                            Tables\Columns\SpatieMediaLibraryImageColumn::make('image')
                                 ->label('Image')
+                                ->disk('media')
                                 ->collection('media_images')
                                 ->conversion('thumbnail')
                                 ->width('100%')
@@ -148,7 +149,7 @@ class MediaImageResource extends Resource
                             Tables\Columns\TextColumn::make('original_filename')
                                 ->searchable()
                                 ->description('Original Filename', 'above')
-                                ->extraAttributes(['class' => 'mt-2']),
+                                ->extraAttributes(['class' => 'mt-2'])
                         ])
             ])
             ->filters([
