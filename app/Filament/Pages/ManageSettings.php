@@ -54,9 +54,6 @@ class ManageSettings extends Page
 //            "fixtures_title" => "Fixtures",
             "enquriry_recipients" => [],
             "default_seo_image_id" => "",
-            "services_enabled" => false,
-            "services_title" => "Services",
-            "services_slug" => "events",
             "projects_enabled" => false,
             "projects_slug" => "projects",
             "projects_title" => "Projects",
@@ -88,22 +85,6 @@ class ManageSettings extends Page
                                         ->conversion('banner')
                                         ->required(),
                                 ])
-                        ]),
-                    Forms\Components\Tabs\Tab::make('Services')
-                        ->schema([
-                            Forms\Components\Toggle::make('state.services_enabled')
-                                ->label('Enabled')
-                                ->default(false)
-                                ->live(true),
-                            Forms\Components\Group::make([
-                                Forms\Components\TextInput::make('state.services_title')
-                                    ->label('Title')
-                                    ->required(),
-                                Forms\Components\TextInput::make('state.services_slug')
-                                    ->label('Slug')
-                                ->required(),
-                            ])
-                            ->visible(fn (Forms\Get $get) => $get('state.services_enabled'))
                         ]),
                     Forms\Components\Tabs\Tab::make('Projects')
                         ->schema([

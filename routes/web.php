@@ -5,7 +5,6 @@ use App\Http\Controllers\FixturesController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,13 +29,6 @@ if( cms('events_enabled') ) {
     Route::prefix(cms('events_slug') ?? 'events')->group(function () {
         Route::get('/{slug}', [EventController::class, 'event'])->name('event');
         Route::get('/', [EventController::class, 'index'])->name('events');
-    });
-}
-
-if( cms('services_enabled') ) {
-    Route::prefix(cms('services_slug') ?? 'services')->group(function () {
-        Route::get('/{slug}', [ServiceController::class, 'service'])->name('service');
-        Route::get('/', [ServiceController::class, 'index'])->name('services');
     });
 }
 

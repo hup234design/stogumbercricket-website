@@ -36,9 +36,6 @@ class NavigationMenuItems
                                 case "events":
                                     $href = cms('events_enabled') ? route('events') ?? null : null;
                                     break;
-                                case 'services':
-                                    $href = cms('services_enabled') ? route('services') ?? null : null;
-                                    break;
                                 default:
                                     $href = route($page->slug) ?? null;
                                     break;
