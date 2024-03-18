@@ -12,16 +12,24 @@
 </head>
 <body class="antialiased font-sans">
 
-<x-header-layout />
+@if ( cms('site_active', true) )
+    <x-header-layout />
+    @section('heading')
+    @show
+    <main class="mt-16">
+        {{ $slot }}
+    </main>
+    <x-footer-layout />
+@else
+    <div class="h-screen w-full flex flex-col items-center justify-start p-8">
+        <img src="{{ url('/images/logo.png') }}" class="w-96 mx-auto">
+        <div class="prose prose-sm max-w-none text-center">
+            <h1 class="text-brand uppercase">Stogumber Cricket Club</h1>
+            <p class="lead font-bold uppercase">New Website Under Construction</p>
+        </div>
+    </div>
+@endif
 
-@section('heading')
-@show
-
-<main class="mt-16">
-    {{ $slot }}
-</main>
-
-<x-footer-layout />
 
 @livewireScripts
 

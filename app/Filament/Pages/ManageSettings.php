@@ -35,6 +35,7 @@ class ManageSettings extends Page
 
         $requiredKeys = [
             "site_name" => config('app.name'),
+            "site_active" => true,
             "default_banner_image_id" => "",
             "posts_slug" => "blog",
             "posts_title" => "Blog",
@@ -80,6 +81,9 @@ class ManageSettings extends Page
                                     Forms\Components\TextInput::make('state.site_name')
                                         ->label('Site Name')
                                         ->required(),
+                                    Forms\Components\Toggle::make('state.site_active')
+                                        ->label('Site Active')
+                                        ->default(true),
                                     MediaImagePicker::make('state.default_banner_image_id')
                                         ->label('Default Header Image')
                                         ->conversion('banner')
