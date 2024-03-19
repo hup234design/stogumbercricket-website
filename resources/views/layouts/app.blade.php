@@ -12,7 +12,7 @@
 </head>
 <body class="antialiased font-sans">
 
-@if ( cms('site_active', true) )
+@if ( cms('site_active', true) || auth()->check() )
     <x-header-layout />
     @section('heading')
     @show

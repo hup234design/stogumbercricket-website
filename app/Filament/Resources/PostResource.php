@@ -26,7 +26,6 @@ use App\Livewire\Blocks\PostsBlock;
 use App\Livewire\Blocks\RichTextBlock;
 use App\Livewire\Blocks\SliderBlock;
 use App\Livewire\Blocks\TestimonialsBlock;
-use App\Models\Page;
 use App\Models\Post;
 use App\Models\Slider;
 use Illuminate\Database\Eloquent\Builder;
@@ -58,7 +57,7 @@ class PostResource extends Resource
                                             ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
                                         Forms\Components\TextInput::make('slug')
                                             ->required()
-                                            ->unique(Page::class, 'slug', ignoreRecord: true)
+                                            ->unique(Post::class, 'slug', ignoreRecord: true)
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(fn ($state, Forms\Set $set) => $set('slug', Str::slug($state))),
                                     ])
