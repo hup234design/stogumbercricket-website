@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Sponsor;
 use Closure;
 use App\Models\Post;
 use App\Services\NavigationMenuItems;
@@ -28,11 +29,11 @@ class HeaderLayout extends Component
         $menu = Navigation::fromHandle('header');
         $menuLinks = NavigationMenuItems::transform($menu['items']);
 
-        ray( $menu );
-        ray( $menuLinks );
+        $sponsor = cms('sponsor_id', null) ? Sponsor::find(cms('sponsor_id')) : null;
 
         return view('layouts.header', [
-            'menuLinks' => $menuLinks
+            'menuLinks' => $menuLinks,
+            'sponsor' => $sponsor
         ]);
     }
 }

@@ -1,10 +1,16 @@
 <header class="fixed top-0 inset-x-0 bg-black/70 z-50 h-32 lg:h-48">
     <div class="hidden lg:block">
         <div class="absolute left-0 mt-4 ml-8 flex flex-col items-center">
-            <div class="text-gray-200 text-xs">PROUDLY SPONSORED BY</div>
-            <a href="https://www.harrisresidential.co.uk/" target="_blank">
-                <img class="mt-4 w-48" src="https://www.harrisresidential.co.uk/index_htm_files/592@2x.png" alt="Harris Residential Logo">
-            </a>
+            @if($sponsor)
+                <div class="text-gray-200 text-xs">PROUDLY SPONSORED BY</div>
+                @if($sponsor->url)
+                    <a href="{{ $sponsor->url }}" target="_blank">
+                        <img class="mt-4 w-48" src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                    </a>
+                @else
+                    <img class="mt-4 w-48" src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                @endif
+            @endif
         </div>
         <div class="absolute right-0 mr-8 mt-4 text-center">
             <p class="font-extrabold text-lg text-white">Stogumber Cricket Club</p>

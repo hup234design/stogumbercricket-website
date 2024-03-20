@@ -3,6 +3,7 @@
 namespace App\Filament\Pages;
 
 //use App\Filament\Forms\Components\MediaImagePicker;
+use App\Models\Sponsor;
 use Cheesegrits\FilamentGoogleMaps\Fields\Map;
 use App\Filament\Forms\Components\MediaImagePicker;
 use App\Filament\Support\CmsSettings;
@@ -36,6 +37,7 @@ class ManageSettings extends Page
         $requiredKeys = [
             "site_name" => config('app.name'),
             "site_active" => true,
+            "sponsor_id" => null,
             "default_banner_image_id" => "",
             "posts_slug" => "blog",
             "posts_title" => "Blog",
@@ -84,6 +86,10 @@ class ManageSettings extends Page
                                     Forms\Components\Toggle::make('state.site_active')
                                         ->label('Site Active')
                                         ->default(true),
+                                    Forms\Components\Select::make('state.sponsor_id')
+                                        ->label('Main Sponsor')
+                                        ->options(Sponsor::all()->pluck('name', 'id'))
+                                        ->required(),
                                     MediaImagePicker::make('state.default_banner_image_id')
                                         ->label('Default Header Image')
                                         ->conversion('banner')
