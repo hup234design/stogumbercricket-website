@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\Fixtures\Fixture;
+use App\Models\Sponsor;
 use Closure;
 use App\Models\Event;
 use App\Models\Post;
@@ -30,11 +31,14 @@ class FooterLayout extends Component
         $menu = Navigation::fromHandle('footer');
         $menuLinks = NavigationMenuItems::transform($menu['items']);
 
+        $sponsors = Sponsor::all();
+
         return view('layouts.footer', [
             'menuLinks' => $menuLinks,
             'latestPosts' => Post::recent()->take(3)->get(),
             'upcomingEvents' => Event::upcoming()->visible()->take(3)->get(),
-            'upcomingFixtures' => Fixture::upcoming()->take(3)->get()
+            'upcomingFixtures' => Fixture::upcoming()->take(3)->get(),
+            'sponsors' => $sponsors
         ]);
     }
 }

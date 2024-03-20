@@ -18,14 +18,6 @@
                             <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
                         </svg>
                     </a>
-
-                    <div class="pt-8">
-                        <p class="text-xs">PROUDLY SPONSORED BY</p>
-                        <a href="https://www.harrisresidential.co.uk/" target="_blank">
-                            <img class="mt-4 w-48" src="https://www.harrisresidential.co.uk/index_htm_files/592@2x.png" alt="">
-                        </a>
-                    </div>
-
                 </div>
             </div>
             <div>
@@ -81,6 +73,30 @@
                 </div>
             </div>
         </div>
+
+
+
+        @if( $sponsors )
+            <div class="mt-16 mb-8 text-center">
+                <p class="text-xs">PROUDLY SPONSORED BY</p>
+                <div class="mt-4 flex flex-col items-center justify-center gap-8 lg:flex-row">
+                    @foreach( $sponsors as $sponsor )
+                        <div class="w-48 h-20">
+                            @if($sponsor->url)
+                                <a href="{{ $sponsor->url }}" target="_blank" class="block w-full h-full flex flex-col items-center justify-center">
+                                    <img class="max-h-full w-auto" src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                                </a>
+                            @else
+                                <div class="w-full h-full flex flex-col items-center justify-center">
+                                    <img class="max-h-full w-auto" src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
         <div class="mt-16 mb-8">
             <nav class="flex justify-center items-center divide-x leading-none">
                 @foreach( $menuLinks ?? [] as $link)
