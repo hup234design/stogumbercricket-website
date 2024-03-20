@@ -1,12 +1,11 @@
 <div>
-
     <div class="absolute top-0 inset-x-0 bottom-0 mt-16 px-8 pb-8">
         <div class="h-full w-full overflow-y-scroll">
             <div
                 x-data="{}"
                 x-on:insert-media-image.window="$dispatch('close-modal', { id: '{{ $modalId }}' })"
                 x-on:insert-gallery-images.window="$dispatch('close-modal', { id: '{{ $modalId }}' })"
-                class="relative w-full grid grid-cols-3 overflow-y-scroll"
+                class="relative w-full grid grid-cols-3"
             >
 
                 <div class="col-span-2" wire:key="table-images-{{ count($mediaImageIds) }}">
