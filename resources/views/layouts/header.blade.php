@@ -5,10 +5,10 @@
                 <div class="text-gray-200 text-xs">PROUDLY SPONSORED BY</div>
                 @if($sponsor->url)
                     <a href="{{ $sponsor->url }}" target="_blank">
-                        <img class="mt-4 w-48" src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                        <img class="mt-4 w-48" src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
                     </a>
                 @else
-                    <img class="mt-4 w-48" src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                    <img class="mt-4 w-48" src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
                 @endif
             @endif
         </div>

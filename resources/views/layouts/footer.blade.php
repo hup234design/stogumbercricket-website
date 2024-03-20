@@ -84,11 +84,11 @@
                         <div class="w-48 h-20">
                             @if($sponsor->url)
                                 <a href="{{ $sponsor->url }}" target="_blank" class="block w-full h-full flex flex-col items-center justify-center">
-                                    <img class="max-h-full w-auto" src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                                    <img class="max-h-full w-auto" src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
                                 </a>
                             @else
                                 <div class="w-full h-full flex flex-col items-center justify-center">
-                                    <img class="max-h-full w-auto" src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                                    <img class="max-h-full w-auto" src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
                                 </div>
                             @endif
                         </div>
