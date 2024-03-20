@@ -18,7 +18,7 @@ class FixtureResource extends Resource
     protected static ?string $model = Fixture::class;
 
     protected static ?string $navigationGroup = "Stogumber CC";
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 10;
 //    protected static ?string $navigationIcon = 'heroicon-o-table-cells';
 
     public static function form(Form $form): Form

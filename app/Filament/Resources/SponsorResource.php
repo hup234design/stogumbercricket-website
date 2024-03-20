@@ -17,7 +17,8 @@ class SponsorResource extends Resource
 {
     protected static ?string $model = Sponsor::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Stogumber CC';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -34,9 +35,6 @@ class SponsorResource extends Resource
                     ->imageEditor()
                     ->preserveFilenames()
                     ->required(),
-                Forms\Components\Toggle::make('primary')
-                    ->label('Main Sponsor')
-                    ->default(false),
             ])
             ->columns(1);
     }

@@ -18,7 +18,7 @@ class VenueResource extends Resource
     protected static ?string $model = Venue::class;
 
     protected static ?string $navigationGroup = "Stogumber CC";
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 12;
     //protected static ?string $navigationIcon = 'heroicon-o-map-pin';
 
     public static function form(Form $form): Form
