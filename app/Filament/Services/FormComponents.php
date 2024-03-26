@@ -3,6 +3,7 @@
 namespace App\Filament\Services;
 
 use App\Livewire\Blocks\ClubOfficersBlock;
+use App\Livewire\Blocks\DownloadsBlock;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Placeholder;
@@ -48,6 +49,7 @@ class FormComponents {
                 PostsBlock::block(),
                 ListBlock::block(),
                 ClubOfficersBlock::block(),
+                DownloadsBlock::block(),
             ])
             ->collapsible()
             ->collapsed(true)

@@ -13,6 +13,7 @@ use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use PHPUnit\Metadata\Group;
 use RyanChandler\FilamentNavigation\Filament\Fields\NavigationSelect;
+use Traineratwot\FilamentOpenStreetMap\Forms\Components\MapInput;
 
 class ManageSettings extends Page
 {
