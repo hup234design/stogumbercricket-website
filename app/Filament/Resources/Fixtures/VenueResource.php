@@ -21,6 +21,8 @@ class VenueResource extends Resource
     protected static ?int $navigationSort = 12;
     //protected static ?string $navigationIcon = 'heroicon-o-map-pin';
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function form(Form $form): Form
     {
         return $form

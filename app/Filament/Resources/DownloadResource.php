@@ -21,6 +21,9 @@ class DownloadResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-down-tray';
 
+    protected static ?string $navigationGroup = null;
+    protected static ?int $navigationSort = 9;
+
     public static function form(Form $form): Form
     {
         return $form

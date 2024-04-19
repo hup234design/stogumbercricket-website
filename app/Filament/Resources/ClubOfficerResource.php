@@ -27,7 +27,6 @@ class ClubOfficerResource extends Resource
     //protected static ?string $navigationIcon = 'heroicon-o-identification';
 
     protected static ?string $navigationGroup = 'Stogumber CC';
-    protected static ?int $navigationSort = 0;
 
     public static function form(Form $form): Form
     {

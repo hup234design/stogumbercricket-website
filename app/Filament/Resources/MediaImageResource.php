@@ -31,9 +31,12 @@ class MediaImageResource extends Resource
 {
     protected static ?string $model = MediaImage::class;
 
+    protected static ?string $navigationGroup = null;
+    protected static ?int $navigationSort = 8;
+
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
-    protected static ?string $navigationGroup = 'Site Management';
+//    protected static ?string $navigationGroup = 'Site Management';
 
     protected static ?string $modelLabel = "Image";
     protected static ?string $pluralModelLabel = "Images";

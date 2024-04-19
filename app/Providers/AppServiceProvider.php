@@ -32,6 +32,6 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         NavigationResource::navigationGroup('Site Management');
-        NavigationResource::navigationSort(2);
+        NavigationResource::navigationSort(3);
     }
 }

@@ -15,9 +15,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PostCategoryResource extends Resource
 {
-    protected static ?string $navigationGroup = 'Posts';
-    protected static ?int $navigationSort = 2;
-    protected static ?string $navigationIcon = 'heroicon-o-puzzle-piece';
+    protected static ?string $navigationGroup = null;
+    protected static ?int $navigationSort = 4;
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {

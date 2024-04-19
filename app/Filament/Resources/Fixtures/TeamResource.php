@@ -22,6 +22,8 @@ class TeamResource extends Resource
     protected static ?string $navigationGroup = "Stogumber CC";
     protected static ?int $navigationSort = 11;
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function form(Form $form): Form
     {
         return $form

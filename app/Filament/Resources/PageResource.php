@@ -46,9 +46,9 @@ class PageResource extends Resource
 {
     protected static ?string $model = Page::class;
 
-    protected static ?string $navigationGroup = 'Pages';
+    protected static ?string $navigationGroup = null;
     protected static ?int $navigationSort = 1;
-    protected static ?string $navigationIcon = 'heroicon-o-puzzle-piece';
+    protected static ?string $navigationIcon = 'heroicon-o-document-duplicate';
 
     protected static bool $showTimestamps = true;
 
