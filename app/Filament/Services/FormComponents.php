@@ -50,6 +50,7 @@ class FormComponents {
                 ListBlock::block(),
                 ClubOfficersBlock::block(),
                 DownloadsBlock::block(),
+                ContactBlock::block()
             ])
             ->collapsible()
             ->collapsed(true)

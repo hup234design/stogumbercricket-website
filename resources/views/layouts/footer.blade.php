@@ -74,8 +74,6 @@
             </div>
         </div>
 
-
-
         @if( $sponsors )
             <div class="mt-16 mb-8 text-center">
                 <p class="text-xs">PROUDLY SPONSORED BY</p>
