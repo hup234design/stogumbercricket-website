@@ -7,18 +7,18 @@
             @endif
 
             @if($telephone = trim(cms('contact_telephone')))
-                <a>
-                    <a tel:{{ $telephone }}">
-                    {{ $telephone }}
-                </a>
+                <p>
+                    <a href="tel:{{ $telephone }}">
+                        {{ $telephone }}
+                    </a>
                 </p>
             @endif
 
             @if($email = trim(cms('contact_email')))
                 <a>
-                    <a mailto:{{ $email }}" class="hover:cursor-pointer hover:text-brand">
-                    {{ $email }}
-                </a>
+                    <a href="mailto:{{ $email }}" class="hover:cursor-pointer hover:text-brand">
+                        {{ $email }}
+                    </a>
                 </p>
             @endif
 

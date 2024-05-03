@@ -9,9 +9,26 @@
                         </a>
                     </div>
 
-                    <p>Stogumber Cricket Club</p>
-                    <p>Station Road, Stogumber<br>Somerset TA4 3TB</p>
-                    <p>stogumbercc@gmail.com</p>
+                    @if($name = trim(cms('contact_name')))
+                        <p>{{ cms('contact_name') }}</p>
+                    @endif
+                    @if($address = trim(cms('contact_address')))
+                        <p>{!! nl2br($address)  !!} </p>
+                    @endif
+                    @if($telephone = trim(cms('contact_telephone')))
+                        <p>
+                            <a href="tel:{{ $telephone }}">
+                                {{ $telephone }}
+                            </a>
+                        </p>
+                    @endif
+                    @if($email = trim(cms('contact_email')))
+                        <p>
+                            <a href="mailto:{{ $email }}" class="hover:cursor-pointer hover:text-brand">
+                                {{ $email }}
+                            </a>
+                        </p>
+                    @endif
 
                     <a href="https://www.facebook.com/stogumbercricketclub" target="_blank" alt="facebook" class="inline-block w-5 h-5 text-white hover:text-gray-200">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" viewBox="0 0 24 24">
