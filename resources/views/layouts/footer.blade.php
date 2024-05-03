@@ -17,14 +17,14 @@
                     @endif
                     @if($telephone = trim(cms('contact_telephone')))
                         <p>
-                            <a href="tel:{{ $telephone }}">
+                            <a href="tel:{{ $telephone }}" class="hover:cursor-pointer hover:underline">
                                 {{ $telephone }}
                             </a>
                         </p>
                     @endif
                     @if($email = trim(cms('contact_email')))
                         <p>
-                            <a href="mailto:{{ $email }}" class="hover:cursor-pointer hover:text-brand">
+                            <a href="mailto:{{ $email }}" class="hover:cursor-pointer hover:underline">
                                 {{ $email }}
                             </a>
                         </p>
