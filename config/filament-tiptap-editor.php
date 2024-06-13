@@ -38,14 +38,14 @@ return [
         'default' => [
             'heading', 'bullet-list', 'ordered-list', 'blockquote', '|',
             'bold', 'italic', 'underline', 'lead', 'small', 'color', 'highlight', 'align-left', 'align-center', 'align-right', '|',
-            'link', 'table', '|', 'code', 'code-block', 'source',
+            'link', 'table', 'oembed', '|', 'code', 'code-block', 'source',
         ],
 
         //'simple' => ['heading', 'hr', 'bullet-list', 'ordered-list', 'checked-list', '|', 'bold', 'italic', 'lead', 'small', '|', 'link', 'media'],
         'simple' => [
             'heading', 'bullet-list', 'ordered-list', '|',
             'bold', 'italic', 'lead', 'align-left', 'align-center', 'align-right', '|',
-            'link'
+            'link', 'oembed'
         ],
 
         'minimal' => ['bold', 'italic', 'link', 'bullet-list', 'ordered-list'],
