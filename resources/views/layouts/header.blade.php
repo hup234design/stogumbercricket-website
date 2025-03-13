@@ -13,10 +13,26 @@
             @endif
         </div>
         <div class="absolute right-0 mr-8 mt-4 text-center">
-            <p class="font-extrabold text-lg text-white">Stogumber Cricket Club</p>
-            <p class="text-gray-200">Station Road, Stogumber</p>
-            <p class="text-gray-200">Somerset TA4 3TB</p>
-            <p class="text-gray-200">stogumbercc@gmail.com</p>
+            @if($name = trim(cms('contact_name')))
+                <p class="font-extrabold text-lg text-white">{{ cms('contact_name') }}</p>
+            @endif
+            @if($address = trim(cms('contact_address')))
+                    <p class="text-gray-200">{!! nl2br($address)  !!} </p>
+            @endif
+            @if($telephone = trim(cms('contact_telephone')))
+                <p class="text-gray-200">
+                    <a href="tel:{{ $telephone }}" class="hover:cursor-pointer hover:underline">
+                        {{ $telephone }}
+                    </a>
+                </p>
+            @endif
+            @if($email = trim(cms('contact_email')))
+                <p class="text-gray-200">
+                    <a href="mailto:{{ $email }}" class="hover:cursor-pointer hover:underline">
+                        {{ $email }}
+                    </a>
+                </p>
+            @endif
         </div>
         <div class="w-full h-48 flex flex-col justify-between items-center">
             <div class="mt-4 w-28 rounded-full overflow-hidden z-50">
