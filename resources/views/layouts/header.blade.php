@@ -137,18 +137,40 @@
             </nav>
 
             <div class="mx-6 border-t border-gray-400 mt-8 pt-8 text-center">
-                <p class="font-bold text-lg text-white">Stogumber Cricket Club</p>
-                <p class="text-sm text-gray-200">Station Road, Stogumber</p>
-                <p class="text-sm text-gray-200">Somerset TA4 3TB</p>
-                <p class="text-sm text-gray-200">stogumbercc@gmail.com</p>
+                @if($name = trim(cms('contact_name')))
+                    <p class="font-extrabold text-lg text-white">{{ cms('contact_name') }}</p>
+                @endif
+                @if($address = trim(cms('contact_address')))
+                    <p class="text-sm text-gray-200">{!! nl2br($address)  !!} </p>
+                @endif
+                @if($telephone = trim(cms('contact_telephone')))
+                    <p class="text-sm text-gray-200">
+                        <a href="tel:{{ $telephone }}" class="hover:cursor-pointer hover:underline">
+                            {{ $telephone }}
+                        </a>
+                    </p>
+                @endif
+                @if($email = trim(cms('contact_email')))
+                    <p class="text-sm text-gray-200">
+                        <a href="mailto:{{ $email }}" class="hover:cursor-pointer hover:underline">
+                            {{ $email }}
+                        </a>
+                    </p>
+                @endif
             </div>
 
+            @if($sponsor)
             <div class="mt-8 flex flex-col items-center">
                 <div class="text-gray-200 text-xs">PROUDLY SPONSORED BY</div>
-                <a href="https://www.harrisresidential.co.uk/" target="_blank">
-                    <img class="mt-4 w-48" src="https://www.harrisresidential.co.uk/index_htm_files/592@2x.png" alt="Harris Residential Logo">
-                </a>
+                @if($sponsor->url)
+                    <a href="{{ $sponsor->url }}" target="_blank">
+                        <img class="mt-4 w-48" src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                    </a>
+                @else
+                    <img class="mt-4 w-48" src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }} Logo">
+                @endif
             </div>
+                @endif
 
         </div>
 
